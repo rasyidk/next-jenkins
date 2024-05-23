@@ -42,15 +42,15 @@ pipeline {
                     sh "rsync -av --delete ${WORKSPACE}/ ${DEPLOY_DIR}/"
 
                     // Start or reload the application using PM2
-                    // sh """
-                    //     cd ${DEPLOY_DIR}
-                    //     if pm2 list | grep -q ${PM2_APP_NAME}; then
-                    //         pm2 reload ${PM2_APP_NAME}
-                    //     else
-                    //         pm2 start npm --name "${PM2_APP_NAME}" -- start
-                    //     fi
-                    // """
-                    sh "/var/lib/jenkins/.yarn/bin/pm2 start npm --name next-jenkins-app -- start"
+                    sh """
+                        cd ${DEPLOY_DIR}
+                        if pm2 list | grep -q name next-jenkins-app; then
+                            pm2 reload name next-jenkins-app
+                        else
+                            pm2 start npm --name name next-jenkins-app -- start
+                        fi
+                    """
+                    // sh "/var/lib/jenkins/.yarn/bin/pm2 start npm --name next-jenkins-app -- start"
                 }
             }
         }
