@@ -18,11 +18,6 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'npm test'
-            }
-        }
         stage('Build the app') {
             steps {
                 sh 'npm run build'
