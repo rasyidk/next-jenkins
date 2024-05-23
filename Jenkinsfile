@@ -50,7 +50,7 @@ pipeline {
                     //         pm2 start npm --name "${PM2_APP_NAME}" -- start
                     //     fi
                     // """
-                    sh "/var/lib/jenkins/.yarn/bin/pm2 start npm --name "${PM2_APP_NAME}" -- start"
+                    sh "/var/lib/jenkins/.yarn/bin/pm2 start npm --name next-jenkins-app -- start"
                 }
             }
         }
