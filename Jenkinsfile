@@ -43,8 +43,8 @@ pipeline {
 
                     // Start or reload the application using PM2
                     sh """
-                        cd ${DEPLOY_DIR}
-                        if /var/lib/jenkins/.yarn/bin/pm2 list | grep -q name next-jenkins-app; then
+                        
+                        if /var/lib/jenkins/.yarn/bin/pm2 list; then
                             /var/lib/jenkins/.yarn/bin/pm2 reload name next-jenkins-app
                         else
                             /var/lib/jenkins/.yarn/bin/pm2 start npm --name name next-jenkins-app -- start
