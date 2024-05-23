@@ -1,7 +1,10 @@
 pipeline {
     agent any
 
-
+    tools {
+        // Install Node.js named "NodeJS 21"
+        nodejs 'NodeJS 21'
+    }
 
     environment {
         DEPLOY_DIR = '/var/www/html/study/next-jenkins'
