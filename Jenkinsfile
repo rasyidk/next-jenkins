@@ -1,10 +1,8 @@
 pipeline {
     agent any
 
-tools {
-        nodejs 'NodeJS 21'
-    }
-    
+
+
     environment {
         DEPLOY_DIR = '/var/www/html/study/next-jenkins'
         PM2_APP_NAME = 'next-jenkins-app' // Name of your PM2 app
