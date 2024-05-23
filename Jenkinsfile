@@ -7,6 +7,12 @@ pipeline {
     }
 
     stages {
+        stage('Check node') {
+            steps {
+                sh 'node -v'
+            }
+        }
+
         stage('Checkout') {
             steps {
                 // Get some code from a GitHub repository
