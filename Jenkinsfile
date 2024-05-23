@@ -15,6 +15,7 @@ pipeline {
         stage('Check node') {
             steps {
                 sh 'node -v'
+                sh 'pm2 status'
             }
         }
 
