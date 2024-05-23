@@ -7,7 +7,7 @@ export default function Home() {
         <p className="text-white text-6xl">COBA COBA COBA COBA INI JENKINS</p>
         <p className="text-white text-6xl">COBA COBA COBA COBA INI JENKINS</p>
         <p className="text-white text-6xl">COBA COBA COBA COBA INI JENKINS</p>
-        <p className="text-white text-6xl">COBA COBA COBA COBA INI JENKINS</p>
+        <p className="text-white text-6xl">RESTART</p>
       </div>
     </main>
   );
