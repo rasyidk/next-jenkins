@@ -41,14 +41,16 @@ pipeline {
                     sh "rsync -av --delete ${WORKSPACE}/ ${DEPLOY_DIR}/"
 
                     // Start or reload the application using PM2
-                    sh """
-                        cd ${DEPLOY_DIR}
-                        if pm2 list | grep -q ${PM2_APP_NAME}; then
-                            pm2 reload ${PM2_APP_NAME}
-                        else
-                            pm2 start npm --name "${PM2_APP_NAME}" -- start
-                        fi
-                    """
+
+                    sh "npm run start"
+                    // sh """
+                    //     cd ${DEPLOY_DIR}
+                    //     if pm2 list | grep -q ${PM2_APP_NAME}; then
+                    //         pm2 reload ${PM2_APP_NAME}
+                    //     else
+                    //         pm2 start npm --name "${PM2_APP_NAME}" -- start
+                    //     fi
+                    // """
                 }
             }
         }
