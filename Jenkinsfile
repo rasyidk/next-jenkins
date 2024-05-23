@@ -9,7 +9,8 @@ pipeline {
     stages {
         stage('Check node') {
             steps {
-                sh 'node -v'
+                sh 'nvm install 21'
+                sh 'nvm use 21'
             }
         }
 
